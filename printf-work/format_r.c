@@ -16,7 +16,7 @@ int _strlen(char *txt)
 
 	return (i);
 }
-	
+
 /**
  * handle_r_fmt - prints string(text) in reverse
  * @ap_r: string to printed, passed as variadic function

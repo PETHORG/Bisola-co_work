@@ -10,15 +10,15 @@
 int handle_d_fmt(va_list ap_d)
 {
 	int i, arg_int;
-        static char mod[] = "0123456789";
-        static char buff[50];
-        char *pt;
+	static const char mod[] = "0123456789";
+	static char buff[50];
+	char *pt;
 	int count = 0;
 
 	arg_int = va_arg(ap_d, int);
 
 	pt = &buff[49];
-        *pt = '\0';
+	*pt = '\0';
 
 	if (arg_int < 0)
 	{
@@ -27,14 +27,14 @@ int handle_d_fmt(va_list ap_d)
 		count++;
 	}
 
-        while (arg_int != 0)
-        {
+	while (arg_int != 0)
+	{
 		--pt;
 		*pt = mod[arg_int % 10];
 		arg_int /= 10;
 		count++;
-                
-        }
+	}
+
 	for (i = 0; pt[i] != '\0'; i++)
 	{
 		_putchar(pt[i]);

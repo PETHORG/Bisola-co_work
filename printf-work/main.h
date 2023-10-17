@@ -7,14 +7,22 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-typedef struct data{
-	char key[13];
+/**
+ * struct data - contains a object for calling format specifiers
+ * @key: an array of characters representing specifiers
+ * @f_pt: a pointer to function strategy
+ */
+
+struct data
+{
+	char key[14];
 	int (*f_pt)(va_list, char*);
-}data_t;
+}
+data_t;
 
 int _printf(char *format, ...);
 int (*check_specifier(char *format))(va_list, char*);
-int call_fmt_function(va_list var_p, char *format); 
+int call_fmt_function(va_list var_p, char *format);
 int _putchar(char c);
 int handle_c_fmt(va_list c);
 int handle_s_fmt(va_list s);

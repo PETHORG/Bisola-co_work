@@ -10,9 +10,8 @@ int _printf(char *format, ...)
 	data_t methods[1] = {
 		{{'r', 'd', 'p', 'u', 's',
 			'o', 'x', 'X', 'b',
-			'i', 'c', 'R', '\0'}, call_fmt_function},
+			'i', 'c', 'R', '\0', ' '}, call_fmt_function},
 	};
-	/* Also soon i would try a new approach of code, where array of function pointer is used and these array contains functions*/
 
 	if (format == NULL)
 		return (-1);
@@ -38,19 +37,11 @@ int _printf(char *format, ...)
 				i += 2;
 				continue;
 			}
-			else if (a == ' ')
-			{
-				return (-1);
-			}
-			else if (a == '\0')
-			{
-				return (-1);
-			}
 			else
 			{
 				for (x = 0; x < 1; x++)
 				{
-					for (y = 0; y < 13; y++)
+					for (y = 0; y < 14; y++)
 					{
 						if (methods[x].key[y] == a)
 						{

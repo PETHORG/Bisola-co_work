@@ -27,7 +27,11 @@ int call_fmt_function(va_list var_p, char *format)
 		span += handle_R_fmt(var_p);
 	else if (*format == 'p')
 		span += handle_p_fmt(var_p);
-	
+	else if (*format = ' ')
+		return (-1);
+	else if (*format = '\0')
+		return (-1);
+
 	return (span);
 
 }
